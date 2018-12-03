@@ -5,18 +5,6 @@ Configure Ubuntu 18.04 machine to be [CIS](https://www.cisecurity.org/cis-benchm
 
 This role **will make changes to the system** that could break things. This is not an auditing tool but rather a remediation tool to be used after an audit has been conducted.
 
-## IMPORTANT INSTALL STEP
-
-If you want to install this via the `ansible-galaxy` command you'll need to run it like this:
-
-`ansible-galaxy install -p roles -r requirements.yml`
-
-With this in the file requirements.yml:
-
-```
-- src: https://github.com/MindPointGroup/u1804-CIS.git
-```
-
 Based on [CIS Ubuntu Linux 18.04 LTS Benchmark v1.0.0 - 08-13-2018 ](https://workbench.cisecurity.org/benchmarks/639).
 
 This repo originated from work done by [Sam Doran](https://github.com/samdoran/ansible-role-stig)
