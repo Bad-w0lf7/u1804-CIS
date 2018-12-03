@@ -10,8 +10,6 @@ u1804cis_section4: true
 u1804cis_section5: true
 u1804cis_section6: true
 
-u1804cis_selinux_disable: false
-
 # These variables correspond with the CIS rule IDs or paragraph numbers defined in
 # the CIS benchmark documents.
 # PLEASE NOTE: These work in coordination with the section # group variables and tags.
@@ -23,8 +21,6 @@ u1804cis_rule_1_1_1_3: true
 u1804cis_rule_1_1_1_4: true
 u1804cis_rule_1_1_1_5: true
 u1804cis_rule_1_1_1_6: true
-u1804cis_rule_1_1_1_7: true
-u1804cis_rule_1_1_1_8: true
 u1804cis_rule_1_1_2: true
 u1804cis_rule_1_1_3: true
 u1804cis_rule_1_1_4: true
@@ -45,12 +41,8 @@ u1804cis_rule_1_1_18: true
 u1804cis_rule_1_1_19: true
 u1804cis_rule_1_1_20: true
 u1804cis_rule_1_1_21: true
-u1804cis_rule_1_1_22: true
 u1804cis_rule_1_2_1: true
 u1804cis_rule_1_2_2: true
-u1804cis_rule_1_2_3: true
-u1804cis_rule_1_2_4: true
-u1804cis_rule_1_2_5: true
 u1804cis_rule_1_3_1: true
 u1804cis_rule_1_3_2: true
 u1804cis_rule_1_4_1: true
@@ -64,8 +56,9 @@ u1804cis_rule_1_6_1_1: true
 u1804cis_rule_1_6_1_2: true
 u1804cis_rule_1_6_1_3: true
 u1804cis_rule_1_6_1_4: true
-u1804cis_rule_1_6_1_5: true
-u1804cis_rule_1_6_2: true
+u1804cis_rule_1_6_2_1: true
+u1804cis_rule_1_6_2_2: true
+u1804cis_rule_1_6_3: true
 u1804cis_rule_1_7_1_1: true
 u1804cis_rule_1_7_1_2: true
 u1804cis_rule_1_7_1_3: true
@@ -284,8 +277,10 @@ u1804cis_xinetd_required: false
 u1804cis_rhnsd_required: false
 
 # 1.4.2 Bootloader password
+u1804cis_bootloader_username: root
 u1804cis_bootloader_password: random
 u1804cis_set_boot_pass: false
+custom_grub_file: 49_custom
 
 # System network parameters (host only OR host and router)
 u1804cis_is_router: false
@@ -307,7 +302,14 @@ u1804cis_aide_cron:
   aide_weekday: '*'
 
 # SELinux policy
+u1804cis_selinux_disable: true
 u1804cis_selinux_pol: targeted
+# SELinux type
+u1804cis_selinux_type: ubuntu
+
+# AppArmor Enforce
+u1804cis_apparmor_disable: false
+u1804cis_apparmor_enforce: true
 
 # Whether or not to run tasks related to auditing/patching the desktop environment
 u1804cis_gui: no

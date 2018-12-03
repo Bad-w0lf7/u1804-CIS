@@ -1,0 +1,2 @@
+set superusers="{{ u1804cis_bootloader_username }}"
+password_pbkdf2 {{ u1804cis_bootloader_username }} {{ grub_pass.passhash }}

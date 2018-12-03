@@ -19,15 +19,30 @@
   changed_when: no
   check_mode: no
 
+- name: "PRELIM | Section 1.6.2.2 | Ensure all AppArmor Profiles are enforcing"
+  apt:
+    name: apparmor-utils
+    state: present
+  when:
+    - not u1804cis_apparmor_disable
+  check_mode: no
+
+# Apparently aptitude is needed for 'name: "*" with the apt module'
+- name: "PRELIM | Section 1.8 | Ensure updates, patches, and additional security software are installed"
+  apt:
+    name: aptitude
+    state: present
+  check_mode: no
+
 - name: "PRELIM | Section 4.1 | Configure System Accounting (auditd)"
   apt:
-      name: auditd
-      state: present
+    name: auditd
+    state: present
 
 - name: "PRELIM | Section 5.1 | Configure cron"
   apt:
-      name: cron
-      state: present
+    name: cron
+    state: present
 
 - name: "PRELIM | Check if prelink package is installed"
   command: dpkg -s prelink
@@ -36,7 +51,7 @@
   failed_when: no
   check_mode: no
   tags:
-      - skip_ansible_lint
+    - skip_ansible_lint
 
 - name: "PRELIM | Check if postfix package is installed"
   command: dpkg -s postfix
@@ -45,7 +60,7 @@
   failed_when: no
   check_mode: no
   tags:
-      - skip_ansible_lint
+    - skip_ansible_lint
 
 # Individual service checks
 - name: "PRELIM | Check for xinetd service"
