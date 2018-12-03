@@ -33,8 +33,23 @@ There are many role variables defined in defaults/main.yml. This list shows the 
 
 **u1804cis_section6**: CIS - System Maintenance settings (Section 6) (Default: true)  
 
-##### Disable all selinux functions
-`u1804cis_selinux_disable: false`
+##### SELinux and AppArmor
+You can choose between SELinux and AppArmor. Since this is Ubuntu we are defaulting to AppArmor. The defaults are as follows:
+
+SELinux (Disabled)
+
+```
+u1804cis_selinux_disable: true
+u1804cis_selinux_pol: targeted
+u1804cis_selinux_type: ubuntu
+```
+
+AppArmor (Enabled)
+
+```
+u1804cis_apparmor_disable: false
+u1804cis_apparmor_enforce: true
+```
 
 ##### Service variables:
 ###### These control whether a server should or should not be allowed to continue to run these services
@@ -125,7 +140,7 @@ u1804cis_time_synchronization_servers:
     - 3.pool.ntp.org  
 ```  
   
-##### 3.4.2 | PATCH | Ensure /etc/hosts.allow is configured
+##### hosts.allow
 ```
 u1804cis_host_allow:
   - "10.0.0.0/255.0.0.0"  
@@ -142,7 +157,7 @@ u1804cis_firewall: iptables
 Dependencies
 ------------
 
-Ansible > 2.2
+Ansible > 2.5
 
 Example Playbook
 -------------------------
@@ -166,7 +181,7 @@ Some examples of using tags:
 
 ```
     # Audit and patch the site
-    ansible-playbook site.yml --tags="patch"
+    ansible-playbook site.yml --tags="u1804cis_section1"
 ```
 
 License
