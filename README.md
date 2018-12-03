@@ -1,9 +1,6 @@
 Ubuntu 18.04 CIS
 ================
 
-[![Build Status](https://travis-ci.org/MindPointGroup/u1804-CIS.svg?branch=devel)](https://travis-ci.org/MindPointGroup/u1804-CIS)
-[![Ansible Role](https://img.shields.io/ansible/role/16089.svg)](https://galaxy.ansible.com/MindPointGroup/u1804-CIS/)
-
 Configure Ubuntu 18.04 machine to be [CIS](https://www.cisecurity.org/cis-benchmarks/) compliant. Level 1 and 2 findings will be corrected by default.
 
 This role **will make changes to the system** that could break things. This is not an auditing tool but rather a remediation tool to be used after an audit has been conducted.
