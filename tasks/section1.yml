@@ -5,7 +5,7 @@
       line: "install cramfs /bin/true"
       create: yes
   when:
-      - rhel7cis_rule_1_1_1_1
+      - u1804cis_rule_1_1_1_1
   tags:
       - level1
       - scored
@@ -18,7 +18,7 @@
     name: cramfs
     state: absent
   when:
-      - rhel7cis_rule_1_1_1_1
+      - u1804cis_rule_1_1_1_1
   tags:
       - level1
       - scored
@@ -33,7 +33,7 @@
       line: "install freevxfs /bin/true"
       create: yes
   when:
-      - rhel7cis_rule_1_1_1_2
+      - u1804cis_rule_1_1_1_2
   tags:
       - level1
       - scored
@@ -46,7 +46,7 @@
     name: freevxfs
     state: absent
   when:
-      - rhel7cis_rule_1_1_1_2
+      - u1804cis_rule_1_1_1_2
   tags:
       - level1
       - scored
@@ -61,7 +61,7 @@
       line: "install jffs2 /bin/true"
       create: yes
   when:
-      - rhel7cis_rule_1_1_1_3
+      - u1804cis_rule_1_1_1_3
   tags:
       - level1
       - scored
@@ -74,7 +74,7 @@
     name: jffs2
     state: absent
   when:
-      - rhel7cis_rule_1_1_1_3
+      - u1804cis_rule_1_1_1_3
   tags:
       - level1
       - scored
@@ -89,7 +89,7 @@
       line: "install hfs /bin/true"
       create: yes
   when:
-      - rhel7cis_rule_1_1_1_4
+      - u1804cis_rule_1_1_1_4
   tags:
       - level1
       - scored
@@ -102,7 +102,7 @@
     name: hfs
     state: absent
   when:
-      - rhel7cis_rule_1_1_1_4
+      - u1804cis_rule_1_1_1_4
   tags:
       - level1
       - scored
@@ -117,7 +117,7 @@
       line: "install hfsplus /bin/true"
       create: yes
   when:
-      - rhel7cis_rule_1_1_1_5
+      - u1804cis_rule_1_1_1_5
   tags:
       - level1
       - scored
@@ -130,7 +130,7 @@
     name: hfsplus
     state: absent
   when:
-      - rhel7cis_rule_1_1_1_5
+      - u1804cis_rule_1_1_1_5
   tags:
       - level1
       - scored
@@ -145,7 +145,7 @@
       line: "install squashfs /bin/true"
       create: yes
   when:
-      - rhel7cis_rule_1_1_1_6
+      - u1804cis_rule_1_1_1_6
   tags:
       - level1
       - scored
@@ -158,7 +158,7 @@
     name: squashfs
     state: absent
   when:
-      - rhel7cis_rule_1_1_1_6
+      - u1804cis_rule_1_1_1_6
   tags:
       - level1
       - scored
@@ -173,7 +173,7 @@
       line: "install udf /bin/true"
       create: yes
   when:
-      - rhel7cis_rule_1_1_1_7
+      - u1804cis_rule_1_1_1_7
   tags:
       - level1
       - scored
@@ -186,7 +186,7 @@
     name: udf
     state: absent
   when:
-      - rhel7cis_rule_1_1_1_7
+      - u1804cis_rule_1_1_1_7
   tags:
       - level1
       - scored
@@ -201,7 +201,7 @@
       line: "install vfat /bin/true"
       create: yes
   when:
-      - rhel7cis_rule_1_1_1_8
+      - u1804cis_rule_1_1_1_8
   tags:
       - level1
       - scored
@@ -214,7 +214,7 @@
     name: vfat
     state: absent
   when:
-      - rhel7cis_rule_1_1_1_8
+      - u1804cis_rule_1_1_1_8
   tags:
       - level2
       - scored
@@ -230,7 +230,7 @@
       masked: no
       state: started
   when:
-      - rhel7cis_rule_1_1_2
+      - u1804cis_rule_1_1_2
   tags:
       - level2
       - scored
@@ -249,9 +249,9 @@
       mode: 0644
   notify: systemd restart tmp.mount
   when:
-      - rhel7cis_rule_1_1_3
-      - rhel7cis_rule_1_1_4
-      - rhel7cis_rule_1_1_5
+      - u1804cis_rule_1_1_3
+      - u1804cis_rule_1_1_4
+      - u1804cis_rule_1_1_5
   tags:
       - level1
       - scored
@@ -266,7 +266,7 @@
   changed_when: no
   failed_when: no
   when:
-      - rhel7cis_rule_1_1_6
+      - u1804cis_rule_1_1_6
   tags:
       - level2
       - scored
@@ -280,7 +280,7 @@
   changed_when: no
   failed_when: no
   when:
-      - rhel7cis_rule_1_1_7
+      - u1804cis_rule_1_1_7
   tags:
       - level2
       - scored
@@ -293,15 +293,15 @@
          SCORED | 1.1.10 | PATCH | Ensure noexec option set on /var/tmp partition"
   mount:
       name: /var/tmp
-      src: "{{ rhel7cis_vartmp['source'] }}"
+      src: "{{ u1804cis_vartmp['source'] }}"
       state: mounted
-      fstype: "{{ rhel7cis_vartmp['fstype'] }}"
-      opts: "{{ rhel7cis_vartmp['opts'] }}"
+      fstype: "{{ u1804cis_vartmp['fstype'] }}"
+      opts: "{{ u1804cis_vartmp['opts'] }}"
   when:
-      - rhel7cis_vartmp['enabled'] == 'yes'
-      - rhel7cis_rule_1_1_8
-      - rhel7cis_rule_1_1_9
-      - rhel7cis_rule_1_1_10
+      - u1804cis_vartmp['enabled'] == 'yes'
+      - u1804cis_rule_1_1_8
+      - u1804cis_rule_1_1_9
+      - u1804cis_rule_1_1_10
   tags:
       - level1
       - scored
@@ -316,7 +316,7 @@
   changed_when: no
   failed_when: no
   when:
-      - rhel7cis_rule_1_1_11
+      - u1804cis_rule_1_1_11
   tags:
       - level2
       - scored
@@ -330,7 +330,7 @@
   changed_when: no
   failed_when: no
   when:
-      - rhel7cis_rule_1_1_12
+      - u1804cis_rule_1_1_12
   tags:
       - level2
       - scored
@@ -344,7 +344,7 @@
   changed_when: no
   failed_when: no
   when:
-      - rhel7cis_rule_1_1_13
+      - u1804cis_rule_1_1_13
   tags:
       - level2
       - scored
@@ -360,7 +360,7 @@
     fstype: "{{ item.fstype }}"
     opts: "nodev"
   when:
-      - rhel7cis_rule_1_1_14
+      - u1804cis_rule_1_1_14
       - item.mount == "/home"
   with_items: "{{ ansible_mounts }}"
   tags:
@@ -379,9 +379,9 @@
       fstype: tmpfs
       opts: "defaults,nodev,nosuid,noexec"
   when:
-      - rhel7cis_rule_1_1_15
-      - rhel7cis_rule_1_1_16
-      - rhel7cis_rule_1_1_17
+      - u1804cis_rule_1_1_15
+      - u1804cis_rule_1_1_16
+      - u1804cis_rule_1_1_17
   tags:
       - level1
       - scored
@@ -395,7 +395,7 @@
       msg: "--> Not relevant"
   changed_when: no
   when:
-      - rhel7cis_rule_1_1_18
+      - u1804cis_rule_1_1_18
   tags:
       - level1
       - notscored
@@ -407,7 +407,7 @@
       msg: "--> Not relevant"
   changed_when: no
   when:
-      - rhel7cis_rule_1_1_19
+      - u1804cis_rule_1_1_19
   tags:
       - level1
       - notscored
@@ -419,7 +419,7 @@
       msg: "--> Not relevant"
   changed_when: no
   when:
-      - rhel7cis_rule_1_1_20
+      - u1804cis_rule_1_1_20
   tags:
       - level1
       - notscored
@@ -432,7 +432,7 @@
   failed_when: no
   #when: sticky_bit_on_worldwritable_dirs_audit.rc == '0'
   when:
-      - rhel7cis_rule_1_1_21
+      - u1804cis_rule_1_1_21
   tags:
       - level1
       - level2
@@ -444,8 +444,8 @@
       name: autofs
       enabled: no
   when:
-      - rhel7cis_allow_autofs == false and autofs_service_status.stdout == "loaded"
-      - rhel7cis_rule_1_1_22
+      - u1804cis_allow_autofs == false and autofs_service_status.stdout == "loaded"
+      - u1804cis_rule_1_1_22
   tags:
       - level1
       - patch
@@ -457,7 +457,7 @@
   changed_when: no
   failed_when: no
   when:
-      - rhel7cis_rule_1_2_1
+      - u1804cis_rule_1_2_1
   tags:
       - level1
       - notscored
@@ -471,7 +471,7 @@
       regexp: "^gpgcheck=0"
       replace: "gpgcheck=1"
   when:
-      - rhel7cis_rule_1_2_2
+      - u1804cis_rule_1_2_2
   tags:
       - level1
       - scored
@@ -485,7 +485,7 @@
   register: yum_repos
   changed_when: no
   when:
-      - rhel7cis_rule_1_2_2
+      - u1804cis_rule_1_2_2
   tags:
       - level1
       - scored
@@ -500,7 +500,7 @@
   with_items:
       - "{{ yum_repos.files }}"
   when:
-      - rhel7cis_rule_1_2_2
+      - u1804cis_rule_1_2_2
   tags:
       - level1
       - scored
@@ -510,7 +510,7 @@
 - name: "NOTSCORED | 1.2.3 | PATCH | Ensure GPG keys are configured"
   command: gpg --quiet --with-fingerprint /etc/pki/rpm-gpg/RPM-GPG-KEY-{{ ansible_distribution|lower }}-release
   when:
-      - rhel7cis_rule_1_2_3
+      - u1804cis_rule_1_2_3
       - ansible_distribution == "RedHat"
   tags:
       - level1
@@ -524,7 +524,7 @@
   failed_when: no
   when:
       - ansible_distribution == "RedHat"
-      - rhel7cis_rule_1_2_4
+      - u1804cis_rule_1_2_4
   tags:
       - level1
       - notscored
@@ -537,8 +537,8 @@
       state: stopped
       enabled: no
   when:
-      - ansible_distribution == "RedHat" and rhnsd_service_status.stdout == "loaded" and not rhel7cis_rhnsd_required
-      - rhel7cis_rule_1_2_5
+      - ansible_distribution == "RedHat" and rhnsd_service_status.stdout == "loaded" and not u1804cis_rhnsd_required
+      - u1804cis_rule_1_2_5
   tags:
       - level2
       - notscored
@@ -550,7 +550,7 @@
       name: aide
       state: present
   when:
-      - rhel7cis_rule_1_3_1
+      - u1804cis_rule_1_3_1
   tags:
       - level1
       - scored
@@ -567,8 +567,8 @@
   async: 45
   poll: 0
   when:
-      - rhel7cis_config_aide
-      - rhel7cis_rule_1_3_1
+      - u1804cis_config_aide
+      - u1804cis_rule_1_3_1
   tags:
       - level1
       - scored
@@ -579,16 +579,16 @@
 - name: "SCORED | 1.3.2 | PATCH | Ensure filesystem integrity is regularly checked"
   cron:
       name: Run AIDE integrity check
-      cron_file: "{{ rhel7cis_aide_cron['cron_file'] }}"
-      user: "{{ rhel7cis_aide_cron['cron_user'] }}"
-      minute: "{{ rhel7cis_aide_cron['aide_minute'] | default('0') }}"
-      hour: "{{ rhel7cis_aide_cron['aide_hour'] | default('5') }}"
-      day: "{{ rhel7cis_aide_cron['aide_day'] | default('*') }}"
-      month: "{{ rhel7cis_aide_cron['aide_month'] | default('*') }}"
-      weekday: "{{ rhel7cis_aide_cron['aide_weekday'] | default('*') }}"
-      job: "{{ rhel7cis_aide_cron['aide_job'] }}"
+      cron_file: "{{ u1804cis_aide_cron['cron_file'] }}"
+      user: "{{ u1804cis_aide_cron['cron_user'] }}"
+      minute: "{{ u1804cis_aide_cron['aide_minute'] | default('0') }}"
+      hour: "{{ u1804cis_aide_cron['aide_hour'] | default('5') }}"
+      day: "{{ u1804cis_aide_cron['aide_day'] | default('*') }}"
+      month: "{{ u1804cis_aide_cron['aide_month'] | default('*') }}"
+      weekday: "{{ u1804cis_aide_cron['aide_weekday'] | default('*') }}"
+      job: "{{ u1804cis_aide_cron['aide_job'] }}"
   when:
-      - rhel7cis_rule_1_3_2
+      - u1804cis_rule_1_3_2
   tags:
       - level1
       - scored
@@ -602,7 +602,7 @@
       path: /etc/grub2.cfg
   register: grub_cfg
   when:
-      - rhel7cis_rule_1_4_1
+      - u1804cis_rule_1_4_1
   tags:
       - level1
       - scored
@@ -618,7 +618,7 @@
       mode: 0600
   when:
       - grub_cfg.stat.exists and grub_cfg.stat.islnk
-      - rhel7cis_rule_1_4_1
+      - u1804cis_rule_1_4_1
   tags:
       - level1
       - scored
@@ -628,11 +628,11 @@
 
 - name: "SCORED | 1.4.2 | PATCH | Ensure bootloader password is set"
   grub_crypt:
-      password: "{{ rhel7cis_bootloader_password }}"
+      password: "{{ u1804cis_bootloader_password }}"
   register: grub_pass
   when:
-      - rhel7cis_set_boot_pass
-      - rhel7cis_rule_1_4_2
+      - u1804cis_set_boot_pass
+      - u1804cis_rule_1_4_2
   tags:
       - level1
       - scored
@@ -646,8 +646,8 @@
       content: "GRUB2_PASSWORD={{ grub_pass.passhash }}"
   notify: generate new grub config
   when:
-      - rhel7cis_set_boot_pass and grub_pass is defined and grub_pass.passhash is defined and grub_pass.passhash != ''
-      - rhel7cis_rule_1_4_2
+      - u1804cis_set_boot_pass and grub_pass is defined and grub_pass.passhash is defined and grub_pass.passhash != ''
+      - u1804cis_rule_1_4_2
   tags:
       - level1
       - scored
@@ -663,7 +663,7 @@
           regexp: '/sbin/sulogin'
           line: 'ExecStart=-/bin/sh -c \"/usr/sbin/sulogin; /usr/bin/systemctl --fail --no-block default\"'
         when:
-          - rhel7cis_rule_1_4_3
+          - u1804cis_rule_1_4_3
           - ansible_distribution_major_version == 7
         tags:
           - level1
@@ -676,7 +676,7 @@
           regexp: '/sbin/sulogin'
           line: 'ExecStart=-/bin/sh -c \"/usr/sbin/sulogin; /usr/bin/systemctl --fail --no-block default\"'
         when:
-          - rhel7cis_rule_1_4_3
+          - u1804cis_rule_1_4_3
           - ansible_distribution_major_version == 7
         tags:
           - level1
@@ -692,7 +692,7 @@
       line: '*                hard    core            0'
       insertbefore: '^# End of file'
   when:
-      - rhel7cis_rule_1_5_1
+      - u1804cis_rule_1_5_1
   tags:
       - level1
       - scored
@@ -709,7 +709,7 @@
       sysctl_set: yes
       ignoreerrors: yes
   when:
-      - rhel7cis_rule_1_5_1
+      - u1804cis_rule_1_5_1
   tags:
       - level1
       - scored
@@ -721,7 +721,7 @@
   shell: dmesg|grep -E "NX|XD" | grep " active"
   changed_when: no
   when:
-      - rhel7cis_rule_1_5_2
+      - u1804cis_rule_1_5_2
   tags:
       - level1
       - level2
@@ -737,7 +737,7 @@
       sysctl_set: yes
       ignoreerrors: yes
   when:
-      - rhel7cis_rule_1_5_3
+      - u1804cis_rule_1_5_3
   tags:
       - level1
       - scored
@@ -748,7 +748,7 @@
   command: prelink -ua
   when:
       - prelink_installed.rc == 0
-      - rhel7cis_rule_1_5_4
+      - u1804cis_rule_1_5_4
   tags:
       - level1
       - scored
@@ -760,7 +760,7 @@
     name: prelink
     state: absent
   when:
-      - rhel7cis_rule_1_5_4
+      - u1804cis_rule_1_5_4
   tags:
       - level1
       - scored
@@ -776,7 +776,7 @@
   ignore_errors: yes
   notify: generate new grub config
   when:
-      - rhel7cis_rule_1_6_1_1
+      - u1804cis_rule_1_6_1_1
   tags:
       - level2
       - scored
@@ -786,11 +786,11 @@
 - name: "SCORED | 1.6.1.2 | PATCH | Ensure the SELinux state is enforcing"
   selinux:
       conf: /etc/selinux/config
-      policy: "{{ rhel7cis_selinux_pol }}"
+      policy: "{{ u1804cis_selinux_pol }}"
       state: enforcing
   when:
-      - not rhel7cis_selinux_disable
-      - rhel7cis_rule_1_6_1_2
+      - not u1804cis_selinux_disable
+      - u1804cis_rule_1_6_1_2
   tags:
       - level2
       - scored
@@ -801,11 +801,11 @@
 - name: "SCORED | 1.6.1.3 | PATCH | Ensure SELinux policy is configured"
   selinux:
       conf: /etc/selinux/config
-      policy: "{{ rhel7cis_selinux_pol }}"
+      policy: "{{ u1804cis_selinux_pol }}"
       state: enforcing
   when:
-      - not rhel7cis_selinux_disable
-      - rhel7cis_rule_1_6_1_3
+      - not u1804cis_selinux_disable
+      - u1804cis_rule_1_6_1_3
   tags:
       - level2
       - scored
@@ -818,7 +818,7 @@
       name: setroubleshoot
       state: absent
   when:
-      - rhel7cis_rule_1_6_1_4
+      - u1804cis_rule_1_6_1_4
   tags:
       - level2
       - scored
@@ -831,7 +831,7 @@
       name: mcstrans
       state: absent
   when:
-      - rhel7cis_rule_1_6_1_5
+      - u1804cis_rule_1_6_1_5
   tags:
       - level2
       - scored
@@ -843,7 +843,7 @@
       name: libselinux
       state: present
   when:
-      - rhel7cis_rule_1_6_2
+      - u1804cis_rule_1_6_2
   tags:
       - level2
       - scored
@@ -855,7 +855,7 @@
       src: etc/motd.j2
       dest: /etc/motd
   when:
-      - rhel7cis_rule_1_7_1_1
+      - u1804cis_rule_1_7_1_1
   tags:
       - level1
       - banner
@@ -867,7 +867,7 @@
       src: etc/issue.j2
       dest: /etc/issue
   when:
-      - rhel7cis_rule_1_7_1_2
+      - u1804cis_rule_1_7_1_2
   tags:
       - level1
       - patch
@@ -878,7 +878,7 @@
       src: etc/issue.net.j2
       dest: /etc/issue.net
   when:
-      - rhel7cis_rule_1_7_1_3
+      - u1804cis_rule_1_7_1_3
   tags:
       - level1
       - banner
@@ -893,7 +893,7 @@
       group: root
       mode: 0644
   when:
-      - rhel7cis_rule_1_7_1_4
+      - u1804cis_rule_1_7_1_4
   tags:
       - level1
       - perms
@@ -908,7 +908,7 @@
       group: root
       mode: 0644
   when:
-      - rhel7cis_rule_1_7_1_5
+      - u1804cis_rule_1_7_1_5
   tags:
       - level1
       - perms
@@ -923,7 +923,7 @@
       group: root
       mode: 0644
   when:
-      - rhel7cis_rule_1_7_1_6
+      - u1804cis_rule_1_7_1_6
   tags:
       - level1
       - perms
@@ -946,10 +946,10 @@
       - { file: '/etc/dconf/profile/gdm', regexp:  'file-db', line: 'file-db:/usr/share/gdm/greeter-dconf-defaults' }
       - { file: '/etc/dconf/db/gdm.d/01-banner-message', regexp:  '\[org\/gnome\/login-screen\]', line: '[org/gnome/login-screen]' }
       - { file: '/etc/dconf/db/gdm.d/01-banner-message', regexp:  'banner-message-enable', line: 'banner-message-enable=true' }
-      - { file: '/etc/dconf/db/gdm.d/01-banner-message', regexp:  'banner-message-text', line: "banner-message-text='{{ rhel7cis_warning_banner }}' " }
+      - { file: '/etc/dconf/db/gdm.d/01-banner-message', regexp:  'banner-message-text', line: "banner-message-text='{{ u1804cis_warning_banner }}' " }
   when:
-      - rhel7cis_gui
-      - rhel7cis_rule_1_7_2
+      - u1804cis_gui
+      - u1804cis_rule_1_7_2
   tags:
       - level1
       - level2
@@ -961,7 +961,7 @@
       name: "*"
       state: latest
   when:
-      - rhel7cis_rule_1_8
+      - u1804cis_rule_1_8
   tags:
       - level1
       - level2

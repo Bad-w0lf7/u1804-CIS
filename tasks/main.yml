@@ -1,11 +1,11 @@
 ---
-# tasks file for RHEL7-CIS
+# tasks file for u1804-CIS
 - name: Check OS version and family
   fail:
-      msg: "This role can only be run against RHEL 7. {{ ansible_distribution }} {{ ansible_distribution_major_version }} is not supported."
+      msg: "This role can only be run against Ubuntu 18.04. {{ ansible_distribution }} {{ ansible_distribution_major_version }} is not supported."
   when:
-      - ansible_os_family == 'RedHat'
-      - ansible_distribution_major_version | version_compare('7', '!=')
+      - ansible_os_family == 'Debian'
+      - ansible_distribution_major_version | version_compare('18', '!=')
   tags:
       - always
 
@@ -24,29 +24,29 @@
 
 - include: section1.yml
   become: yes
-  when: rhel7cis_section1
+  when: u1804cis_section1
   tags:
-      - rhel7cis_section1
+      - u1804cis_section1
 
 - include: section2.yml
   become: yes
-  when: rhel7cis_section2
+  when: u1804cis_section2
 
 - include: section3.yml
   become: yes
-  when: rhel7cis_section3
+  when: u1804cis_section3
 
 - include: section4.yml
   become: yes
-  when: rhel7cis_section4
+  when: u1804cis_section4
 
 - include: section5.yml
   become: yes
-  when: rhel7cis_section5
+  when: u1804cis_section5
 
 - include: section6.yml
   become: yes
-  when: rhel7cis_section6
+  when: u1804cis_section6
 
 - include: post.yml
   become: yes

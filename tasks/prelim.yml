@@ -20,17 +20,17 @@
   check_mode: no
 
 - name: "PRELIM | Section 4.1 | Configure System Accounting (auditd)"
-  yum:
-      name: audit
+  apt:
+      name: auditd
       state: present
 
 - name: "PRELIM | Section 5.1 | Configure cron"
-  yum:
-      name: cronie
+  apt:
+      name: cron
       state: present
 
 - name: "PRELIM | Check if prelink package is installed"
-  command: rpm -q prelink
+  command: dpkg -s prelink
   register: prelink_installed
   changed_when: no
   failed_when: no
@@ -39,7 +39,7 @@
       - skip_ansible_lint
 
 - name: "PRELIM | Check if postfix package is installed"
-  command: rpm -q postfix
+  command: dpkg -s postfix
   register: postfix_installed
   changed_when: no
   failed_when: no
@@ -114,9 +114,9 @@
   changed_when: no
   check_mode: no
 
-- name: "PRELIM | Check for httpd service"
-  shell: "systemctl show httpd | grep LoadState | cut -d = -f 2"
-  register: httpd_service_status
+- name: "PRELIM | Check for apache2 service"
+  shell: "systemctl show apache2 | grep LoadState | cut -d = -f 2"
+  register: apache2_service_status
   changed_when: no
   check_mode: no
 
