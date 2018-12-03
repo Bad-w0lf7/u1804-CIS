@@ -15,8 +15,8 @@ vagrant:
     - "vm.synced_folder './', '/vagrant', disabled: true"
     - "ssh.insert_key = false"
   platforms:
-    - name: centos/7
-      box: centos/7
+    - name: ubuntu/bionic64
+      box: ubuntu/bionic64
   providers:
     - name: virtualbox
       type: virtualbox

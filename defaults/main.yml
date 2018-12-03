@@ -76,6 +76,10 @@ u1804cis_rule_2_1_4: true
 u1804cis_rule_2_1_5: true
 u1804cis_rule_2_1_6: true
 u1804cis_rule_2_1_7: true
+u1804cis_rule_2_1_8: true
+u1804cis_rule_2_1_9: true
+u1804cis_rule_2_1_10: true
+u1804cis_rule_2_1_11: true
 u1804cis_rule_2_2_1_1: true
 u1804cis_rule_2_2_1_2: true
 u1804cis_rule_2_2_1_3: true
@@ -95,10 +99,6 @@ u1804cis_rule_2_2_14: true
 u1804cis_rule_2_2_15: true
 u1804cis_rule_2_2_16: true
 u1804cis_rule_2_2_17: true
-u1804cis_rule_2_2_18: true
-u1804cis_rule_2_2_19: true
-u1804cis_rule_2_2_20: true
-u1804cis_rule_2_2_21: true
 u1804cis_rule_2_3_1: true
 u1804cis_rule_2_3_2: true
 u1804cis_rule_2_3_3: true
@@ -133,6 +133,7 @@ u1804cis_rule_3_6_2: true
 u1804cis_rule_3_6_3: true
 u1804cis_rule_3_6_4: true
 u1804cis_rule_3_6_5: true
+u1804cis_rule_3_7: true
 
 # Section 4 rules
 u1804cis_rule_4_1_1_1: true

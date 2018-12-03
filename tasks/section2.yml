@@ -2,7 +2,7 @@
   block:
       - name: "SCORED | 2.1.1 | PATCH | Ensure chargen services are not enabled | chargen-dgram"
         stat:
-            path: /etc/xinetd.d/chargen-dgram
+          path: /etc/xinetd.d/chargen-dgram
         register: chargen_dgram_service
 
       - name: "SCORED | 2.1.1 | PATCH | Ensure chargen services are not enabled | chargen-dgram"
@@ -14,7 +14,7 @@
 
       - name: "SCORED | 2.1.1 | PATCH | Ensure chargen services are not enabled | chargen-stream"
         stat:
-            path: /etc/xinetd.d/chargen-stream
+          path: /etc/xinetd.d/chargen-stream
         register: chargen_stream_service
 
       - name: "SCORED | 2.1.1 | PATCH | Ensure chargen services are not enabled | chargen-stream"
@@ -22,15 +22,15 @@
         notify: restart xinetd
         when: chargen_stream_service.stat.exists
         tags:
-            - skip_ansible_lint
+          - skip_ansible_lint
   when:
-      - rhel7cis_rule_2_1_1
+    - rhel7cis_rule_2_1_1
   tags:
-      - level1
-      - scored
-      - services
-      - patch
-      - rule_2.1.1
+    - level1
+    - scored
+    - services
+    - patch
+    - rule_2.1.1
 
 - name: "SCORED | 2.1.2 | PATCH | Ensure daytime services are not enabled | daytime-dgram,daytime-stream"
   block:
