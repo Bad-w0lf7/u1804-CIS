@@ -9,11 +9,17 @@ Based on [CIS Ubuntu Linux 18.04 LTS Benchmark v1.0.0 - 08-13-2018 ](https://wor
 
 This repo originated from work done by [Sam Doran](https://github.com/samdoran/ansible-role-stig) and [MindPoint Group](https://github.com/MindPointGroup/RHEL7-CIS)
 
+Work In Progress
+----------------
+
+The PRELIM and Section 1 sections are mostly all working as of 12/3/2018. This section will be updated as work progresses.
+
 Requirements
 ------------
 
 You should carefully read through the tasks to make sure these changes will not break your systems before running this playbook.
 If you want to do a dry run without changing anything, set the below sections (u1804cis_section1-6) to false. 
+
 
 Role Variables
 --------------
