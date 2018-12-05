@@ -7,7 +7,7 @@ This role **will make changes to the system** that could break things. This is n
 
 Based on [CIS Ubuntu Linux 18.04 LTS Benchmark v1.0.0 - 08-13-2018 ](https://workbench.cisecurity.org/benchmarks/639).
 
-This repo originated from work done by [Sam Doran](https://github.com/samdoran/ansible-role-stig) and https://github.com/MindPointGroup/RHEL7-CIS
+This repo originated from work done by [Sam Doran](https://github.com/samdoran/ansible-role-stig) and [MindPoint Group](https://github.com/MindPointGroup/RHEL7-CIS)
 
 Requirements
 ------------
